@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegasoft\Providers;
+namespace Elegasoft\CommonLaravelTools\Providers;
 
 use Elegasoft\Exceptions\CommonExceptionHandler;
 use Illuminate\Support\ServiceProvider;
