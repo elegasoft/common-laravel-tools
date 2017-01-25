@@ -1,0 +1,22 @@
+{
+    "name": "elegasoft/common-laravel-tools",
+    "description": "A collection of common tools for Laravel projects.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jason",
+            "email": "jason@elegasoft.com"
+        }
+    ],
+    "minimum-stability":"dev",
+    "require": {
+        "php": ">=5.6.0",
+        "illuminate/support": "5.0.x|5.1.x|5.2.x|5.3.x"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Elegasoft\\CommonLaravelTools\\":"src/"
+        }
+    }
+}
