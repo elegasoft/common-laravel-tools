@@ -1,8 +1,7 @@
 <?php
 
-namespace Elegasoft\CommonLaravelTools\Providers;
+namespace Elegasoft\CommonLaravelTools;
 
-use Elegasoft\CommonLaravelTools\Exceptions\CommonExceptionHandler;
 use Illuminate\Support\ServiceProvider;
 
 class ToolServiceProvider extends ServiceProvider
@@ -22,9 +21,11 @@ class ToolServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/common-laravel-tools.php' => config_path('common-laravel-tools.php'),
-            __DIR__.'/../Views' => resource_path('views/vendor/elegasoft/common-laravel-tools'),
-        ]);
+            __DIR__ . '/../config/common-laravel-tools.php' => config_path('common-laravel-tools.php')
+        ],'config');
+        $this->publishes([
+            __DIR__ . '/../Views' => resource_path('views/vendor/elegasoft/common-laravel-tools')
+        ],'views');
         $this->loadViewsFrom(resource_path('views/vendor/elegasoft/common-laravel-tools'), 'common-laravel-tools');
     }
 
@@ -36,8 +37,8 @@ class ToolServiceProvider extends ServiceProvider
     public function register()
     {
         // create image
-        $this->app->singleton('common-exception-handler', function ($app) {
-            return new CommonExceptionHandler();
-        });
+//        $this->app->singleton('common-exception-handler', function ($app) {
+//            return new CommonExceptionHandler();
+//        });
     }
 }

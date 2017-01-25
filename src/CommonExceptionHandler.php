@@ -1,6 +1,6 @@
 <?php
 
-namespace Elegasoft\CommonLaravelTools\Exceptions;
+namespace Elegasoft\CommonLaravelTools;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Response;
