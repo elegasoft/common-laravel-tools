@@ -2,7 +2,7 @@
 
 namespace Elegasoft\CommonLaravelTools\Providers;
 
-use Elegasoft\Exceptions\CommonExceptionHandler;
+use Elegasoft\CommonLaravelTools\Exceptions\CommonExceptionHandler;
 use Illuminate\Support\ServiceProvider;
 
 class ToolServiceProvider extends ServiceProvider
