@@ -8,10 +8,10 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may specify whether or not to handle exceptions
-    | Default: !env('APP_DEBUG', true)
+    | Default: !env('APP_DEBUG', false)
     */
 
-    'handle_exceptions'=>true,
+    'handle_exceptions'=>!env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
