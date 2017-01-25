@@ -51,7 +51,7 @@ class CommonExceptionHandler
     {
         foreach ($this->exceptions_list as $exception => $handler){
             if($this->exception instanceof $exception){
-                if(config('common-laravel-tools.'.$handler) === true && config('app.debug') === false){
+                if(config('common-laravel-tools.'.$handler) === true && config('common-laravel-tools.handle_exceptions') === true){
                     $this->exception_caught = true;
                     $this->$handler();
                 }

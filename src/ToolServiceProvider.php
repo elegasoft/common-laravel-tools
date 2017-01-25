@@ -11,7 +11,7 @@ class ToolServiceProvider extends ServiceProvider
      *
      * @var bool
      */
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * Bootstrap the application services.
@@ -21,11 +21,11 @@ class ToolServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/common-laravel-tools.php' => config_path('common-laravel-tools.php')
-        ],'config');
+            __DIR__ . '/config/common-laravel-tools.php' => config_path('common-laravel-tools.php')
+        ], 'config');
         $this->publishes([
-            __DIR__ . '/../Views' => resource_path('views/vendor/elegasoft/common-laravel-tools')
-        ],'views');
+            __DIR__ . '/Views' => resource_path('views/vendor/elegasoft/common-laravel-tools')
+        ], 'views');
         $this->loadViewsFrom(resource_path('views/vendor/elegasoft/common-laravel-tools'), 'common-laravel-tools');
     }
 
@@ -37,8 +37,9 @@ class ToolServiceProvider extends ServiceProvider
     public function register()
     {
         // create image
-//        $this->app->singleton('common-exception-handler', function ($app) {
-//            return new CommonExceptionHandler();
-//        });
+        $this->app->singleton('common-exception-handler', function ($app) {
+            $e = new \Exception();
+            return new CommonExceptionHandler($e);
+        });
     }
 }

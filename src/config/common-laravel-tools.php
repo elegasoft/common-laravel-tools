@@ -1,6 +1,18 @@
 <?php
 
 return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Activates Exception Handling
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify whether or not to handle exceptions
+    | Default: !env('APP_DEBUG', true)
+    */
+
+    'handle_exceptions'=>true,
+
     /*
     |--------------------------------------------------------------------------
     | Redirects Token Mismatch Exceptions
